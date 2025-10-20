@@ -565,16 +565,16 @@ def best_selling_items_analyzer(request):
                 'category': cake.category.name if cake.category else 'Uncategorized'
             })
         
-        # Sort by sales count (descending)
-        cake_analytics.sort(key=lambda x: x['sales'], reverse=True)
+        # Sort by sales count (ascending - lowest to highest)
+        cake_analytics.sort(key=lambda x: x['sales'], reverse=False)
         
-        # Get top 5 performers
-        top_cakes = cake_analytics[:5]
+        # Get all cakes (showing all cakes from lowest to highest sales)
+        top_cakes = cake_analytics
         
-        # Get low performers (sales < 5 or no sales in period)
+        # Get low performers (cakes with 0 sales)
         low_performers = [
             cake for cake in cake_analytics 
-            if cake['sales'] < 5
+            if cake['sales'] == 0
         ]
         
         # Calculate summary metrics
@@ -588,8 +588,8 @@ def best_selling_items_analyzer(request):
         else:
             avg_profit_margin = 0
         
-        # Get top performer
-        top_performer = top_cakes[0] if top_cakes else None
+        # Get top performer (cake with most sales)
+        top_performer = max(cake_analytics, key=lambda x: x['sales']) if cake_analytics else None
         
         # Prepare response
         analyzer_data = {

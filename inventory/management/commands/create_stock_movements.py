@@ -130,7 +130,7 @@ class Command(BaseCommand):
 
         self.stdout.write(f'\nSummary:')
         self.stdout.write(f'Total movements: {total_movements}')
-        self.stdout.write(f'Total value: ${total_value:.2f}')
+        self.stdout.write(f'Total value: RS {total_value:.2f}')
 
         # Print by type
         self.stdout.write(f'\nBy movement type:')

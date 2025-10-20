@@ -112,4 +112,4 @@ class DailySales(models.Model):
         ordering = ['-date']
     
     def __str__(self):
-        return f"Daily Sales - {self.date} (${self.total_sales})"
+        return f"Daily Sales - {self.date} (RS {self.total_sales})"

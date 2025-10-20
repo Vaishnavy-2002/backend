@@ -97,7 +97,7 @@ def create_test_cakes():
         if not Cake.objects.filter(name=cake_data['name']).exists():
             try:
                 cake = Cake.objects.create(**cake_data)
-                print(f'✅ Created: {cake.name} - ${cake.price}')
+                print(f'✅ Created: {cake.name} - RS {cake.price}')
                 created_count += 1
             except Exception as e:
                 print(f'❌ Error creating {cake_data["name"]}: {e}')

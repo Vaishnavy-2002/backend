@@ -39,9 +39,9 @@ def update_customization_options():
                 size.servings = size_data['servings']
                 size.price_modifier = size_data['price_modifier']
                 size.save()
-                print(f"✅ Updated: {size.name} - +${size.price_modifier}")
+                print(f"✅ Updated: {size.name} - +RS {size.price_modifier}")
             else:
-                print(f"✅ Created: {size.name} - +${size.price_modifier}")
+                print(f"✅ Created: {size.name} - +RS {size.price_modifier}")
         except Exception as e:
             print(f"❌ Error updating size {size_data['name']}: {e}")
     
@@ -64,9 +64,9 @@ def update_customization_options():
                 shape.name = shape_data['name']
                 shape.price_modifier = shape_data['price_modifier']
                 shape.save()
-                print(f"✅ Updated: {shape.name} - +${shape.price_modifier}")
+                print(f"✅ Updated: {shape.name} - +RS {shape.price_modifier}")
             else:
-                print(f"✅ Created: {shape.name} - +${shape.price_modifier}")
+                print(f"✅ Created: {shape.name} - +RS {shape.price_modifier}")
         except Exception as e:
             print(f"❌ Error updating shape {shape_data['name']}: {e}")
     
@@ -91,9 +91,9 @@ def update_customization_options():
                 frosting.price_modifier = frosting_data['price_modifier']
                 frosting.color = frosting_data['color']
                 frosting.save()
-                print(f"✅ Updated: {frosting.name} - +${frosting.price_modifier}")
+                print(f"✅ Updated: {frosting.name} - +RS {frosting.price_modifier}")
             else:
-                print(f"✅ Created: {frosting.name} - +${frosting.price_modifier}")
+                print(f"✅ Created: {frosting.name} - +RS {frosting.price_modifier}")
         except Exception as e:
             print(f"❌ Error updating frosting {frosting_data['name']}: {e}")
     
@@ -117,9 +117,9 @@ def update_customization_options():
                 topping.name = topping_data['name']
                 topping.price_modifier = topping_data['price_modifier']
                 topping.save()
-                print(f"✅ Updated: {topping.name} - +${topping.price_modifier}")
+                print(f"✅ Updated: {topping.name} - +RS {topping.price_modifier}")
             else:
-                print(f"✅ Created: {topping.name} - +${topping.price_modifier}")
+                print(f"✅ Created: {topping.name} - +RS {topping.price_modifier}")
         except Exception as e:
             print(f"❌ Error updating topping {topping_data['name']}: {e}")
     
@@ -147,19 +147,19 @@ def main():
         print("\n📋 Updated Customization Options:")
         print("\n📏 Cake Sizes:")
         for size in CakeSize.objects.all().order_by('id'):
-            print(f"  {size.name}: +${size.price_modifier}")
+            print(f"  {size.name}: +RS {size.price_modifier}")
         
         print("\n🔷 Cake Shapes:")
         for shape in CakeShape.objects.all().order_by('id'):
-            print(f"  {shape.name}: +${shape.price_modifier}")
+            print(f"  {shape.name}: +RS {shape.price_modifier}")
         
         print("\n🎨 Frostings:")
         for frosting in Frosting.objects.all().order_by('id'):
-            print(f"  {frosting.name}: +${frosting.price_modifier}")
+            print(f"  {frosting.name}: +RS {frosting.price_modifier}")
         
         print("\n🍓 Toppings:")
         for topping in Topping.objects.all().order_by('id'):
-            print(f"  {topping.name}: +${topping.price_modifier}")
+            print(f"  {topping.name}: +RS {topping.price_modifier}")
     else:
         print("\n❌ Some issues occurred during update")
 

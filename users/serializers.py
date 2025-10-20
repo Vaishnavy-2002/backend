@@ -20,11 +20,17 @@ def validate_phone_number(value):
     return value
 
 class UserSerializer(serializers.ModelSerializer):
+    total_orders = serializers.SerializerMethodField()
+    
     class Meta:
         model = User
         fields = ('id', 'username', 'email', 'first_name', 'last_name', 'user_type', 
-                 'phone_number', 'address', 'profile_picture', 'is_verified', 'created_at')
-        read_only_fields = ('id', 'created_at')
+                 'phone_number', 'address', 'profile_picture', 'is_verified', 'is_active', 'created_at', 'date_joined', 'total_orders')
+        read_only_fields = ('id', 'created_at', 'date_joined', 'total_orders')
+    
+    def get_total_orders(self, obj):
+        """Get the total number of orders for this user"""
+        return obj.orders.count()
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, min_length=8)

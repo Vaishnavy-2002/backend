@@ -165,7 +165,7 @@ def main():
         print("\n🍰 Available Cakes:")
         cakes = Cake.objects.all().order_by('id')
         for cake in cakes:
-            print(f"  ID: {cake.id} - {cake.name} - ${cake.price}")
+            print(f"  ID: {cake.id} - {cake.name} - RS {cake.price}")
     else:
         print("\n❌ Some issues occurred during sync")
 
