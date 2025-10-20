@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Loyalty - SweetBite</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+
+        .content {
+            margin: 30px 0;
+        }
+
+        .stats-box {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .message {
+            background-color: #f8f9fa;
+            border-left: 4px solid #ff6b9d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .contact-info {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .heart {
+            color: #ff6b9d;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🍰 SweetBite</div>
+            <h1 class="title">Thank You for Your Loyalty!</h1>
+            <p class="subtitle">We appreciate you being part of our SweetBite family</p>
+        </div>
+
+        <div class="content">
+            <p>Dear <strong>{{ customer_name }}</strong>,</p>
+
+            <div class="message">
+                <p>We wanted to take a moment to express our heartfelt gratitude for your continued loyalty to
+                    SweetBite! <span class="heart">💖</span></p>
+                <p>Your support means the world to us, and we're thrilled to have you as one of our valued customers.
+                </p>
+            </div>
+
+            <div class="stats-box">
+                <h3 style="margin-top: 0; margin-bottom: 20px;">Your SweetBite Journey</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">{{ order_count }}</div>
+                        <div class="stat-label">Total Orders</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Rs {{ total_spent|floatformat:0 }}</div>
+                        <div class="stat-label">Total Spent</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">{{ date_joined }}</div>
+                        <div class="stat-label">Customer Since</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>We truly appreciate your trust in our products and services. Your feedback and continued patronage help
+                us improve and grow every day.</p>
+
+            <div style="text-align: center;">
+                <a href="http://localhost:3000" class="cta-button">Visit Our Store</a>
+            </div>
+
+            <div class="contact-info">
+                <strong>💬 Stay Connected:</strong><br>
+                We'd love to hear from you! Share your experience or any suggestions you might have.
+            </div>
+
+            <p>Thank you for being an amazing part of the SweetBite family! We look forward to serving you many more
+                delicious moments.</p>
+
+            <p>With warm regards,<br>
+                <strong>The SweetBite Team</strong> <span class="heart">💕</span>
+            </p>
+        </div>
+
+        <div class="footer">
+            <p><strong>SweetBite - Delicious Cakes for Every Occasion</strong></p>
+            <p>📧 Email: support@sweetbite.com | 📞 Phone: +91 9876543210</p>
+            <p>🌐 Website: <a href="http://localhost:3000" style="color: #ff6b9d;">www.sweetbite.com</a></p>
+            <p><small>© 2024 SweetBite. All rights reserved.</small></p>
+            <p><small>This is an automated message, please do not reply to this email.</small></p>
+        </div>
+    </div>
+</body>
+
+</html>

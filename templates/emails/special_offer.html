@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offer - SweetBite</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+
+        .content {
+            margin: 30px 0;
+        }
+
+        .offer-box {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .offer-code {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .discount-badge {
+            background-color: #ffd700;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .milestone-info {
+            background-color: #e8f5e8;
+            border: 1px solid #4caf50;
+            color: #2e7d32;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .validity {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .celebration {
+            color: #ff6b9d;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🍰 SweetBite</div>
+            <h1 class="title">🎉 Special Offer Just for You!</h1>
+            <p class="subtitle">You've earned an exclusive discount</p>
+        </div>
+
+        <div class="content">
+            <p>Dear <strong>{{ customer_name }}</strong>,</p>
+
+            <div class="milestone-info">
+                <p><strong>🎊 Congratulations!</strong> You've reached an amazing milestone!</p>
+                <p>You've completed <strong>{{ order_count }} orders</strong> with us, and we want to celebrate your
+                    loyalty!</p>
+            </div>
+
+            <div class="offer-box">
+                <h2 style="margin-top: 0; margin-bottom: 20px;">Your Exclusive Reward</h2>
+
+                <div class="discount-badge">{{ discount_percentage }}% OFF</div>
+
+                <p style="font-size: 18px; margin: 15px 0;">Special discount for reaching {{ milestone }} orders
+                    milestone!</p>
+
+                <div class="offer-code">
+                    Use Code: <strong>{{ offer_code }}</strong>
+                </div>
+
+                <p style="font-size: 14px; opacity: 0.9; margin-top: 15px;">
+                    Valid on orders above Rs 500
+                </p>
+            </div>
+
+            <div class="validity">
+                <strong>⏰ Limited Time Offer:</strong><br>
+                This special discount is valid until <strong>{{ valid_until }}</strong>
+            </div>
+
+            <p>We're so grateful for your continued trust in SweetBite. Your loyalty means everything to us!</p>
+
+            <div style="text-align: center;">
+                <a href="http://localhost:3000" class="cta-button">Shop Now & Use Your Discount</a>
+            </div>
+
+            <p>Thank you for being an amazing part of the SweetBite family! <span class="celebration">🎂✨</span></p>
+
+            <p>With warm regards,<br>
+                <strong>The SweetBite Team</strong> <span class="celebration">💕</span>
+            </p>
+        </div>
+
+        <div class="footer">
+            <p><strong>SweetBite - Delicious Cakes for Every Occasion</strong></p>
+            <p>📧 Email: support@sweetbite.com | 📞 Phone: +91 9876543210</p>
+            <p>🌐 Website: <a href="http://localhost:3000" style="color: #ff6b9d;">www.sweetbite.com</a></p>
+            <p><small>© 2024 SweetBite. All rights reserved.</small></p>
+            <p><small>This is an automated message, please do not reply to this email.</small></p>
+        </div>
+    </div>
+</body>
+
+</html>
